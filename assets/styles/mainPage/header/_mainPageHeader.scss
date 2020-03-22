@@ -1,0 +1,30 @@
+.main-title-box {
+  width: 100%;
+  background-color: green;
+  border-bottom: 3px solid red;
+}
+
+.main-title-box__text {
+  text-align: center;
+  padding: 20px 0;
+  font-family: "Lobster";
+  color: white;
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+
+@media (min-width: 411px) {
+  .main-title-box__text {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-title-box__text {
+    font-size: 42px;
+  }
+
+  .main-title-box {
+    border-bottom: 5px solid red;
+  }
+}

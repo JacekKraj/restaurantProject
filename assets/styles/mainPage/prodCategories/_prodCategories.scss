@@ -1,0 +1,141 @@
+.product-categories__hat-image-box {
+  display: none;
+}
+
+.products-categories {
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  height: 50vh;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.products-category__container {
+  display: flex;
+  flex-basis: 30%;
+  align-items: center;
+}
+
+.products-category {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-basis: 70%;
+  height: 80%;
+  margin: 0 auto;
+  border: 2px solid rgb(41, 136, 38);
+  border-radius: 7px;
+  box-shadow: 0px 5px 5px 1px rgba(181, 182, 191, 1);
+  transition: 0.3s linear;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: 0.2s linear;
+}
+
+.products-category--drinks {
+  background-image: url("../images/menu/drink2.jpg");
+}
+
+.products-category--sweets {
+  background-image: url("../images/menu/dunat2.jpg");
+}
+
+.products-category--meals {
+  background-image: url("../images/menu/fries2.jpg");
+}
+
+.products-category__desc {
+  flex-basis: 50%;
+  border: 2px solid rgb(16, 214, 33);
+  border-radius: 5px;
+  background-color: rgba(9, 247, 29, 0.7);
+  text-align: center;
+  color: white;
+}
+
+.products-category:hover {
+  height: 95%;
+  flex-basis: 80%;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+  .products-category__desc {
+    flex-basis: 40%;
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 533px) and (orientation: landscape) {
+  .products-categories {
+    margin-bottom: 15px;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .products-category__container {
+    display: flex;
+    flex-basis: 30%;
+  }
+
+  .products-category {
+    flex-basis: 90%;
+    height: 80%;
+  }
+
+  .products-category__desc {
+    flex-basis: 70%;
+    font-size: 20px;
+  }
+
+  .products-category:hover {
+    height: 95%;
+    flex-basis: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .products-categories {
+    height: 35vh;
+  }
+  .products-category__desc {
+    font-size: 29px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .products-categories {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .product-categories__hat-image-box {
+    display: flex;
+    flex-basis: 17%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .product-categorie__hat-image {
+    width: 20vh;
+  }
+
+  .products-category__container {
+    flex-basis: calc(65% / 3);
+  }
+
+  .products-category {
+    flex-basis: 80%;
+    height: 60%;
+  }
+
+  .products-category__desc {
+    font-size: 26px;
+  }
+
+  .products-category:hover {
+    height: 75%;
+    flex-basis: 95%;
+  }
+}
