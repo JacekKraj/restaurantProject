@@ -15,8 +15,46 @@
     <link rel="stylesheet" href="./assets/styles/main.css" />
   </head>
   <body>
+    <template id="prod">
+      <div class="product">
+        <div class="product__remove-btn">
+          <img
+            src="./assets/images/buttons/discount.png"
+            alt="remove button image"
+            class="product__remove-btn__image"
+          />
+        </div>
+        <div class="product__add-btn">
+          <img
+            src="./assets/images/buttons/plus.png"
+            alt="add button image"
+            class="product__add-btn__image"
+          />
+        </div>
+        <div class="product__amount">0x</div>
+        <div class="product__value">1.5$</div>
+        <div class="product__image-box">
+          <img
+            src="./assets/images/color/fries.PNG"
+            alt=""
+            class="product__image"
+          />
+        </div>
+      </div>
+    </template>
+
+    <template id="prod-in-conc">
+      <div class="product-conc">
+        <p class="product-conc__name">Fries</p>
+        <div class="product-conc__dismount"></div>
+        <p class="product-conc__amount">1</p>
+        <div class="product-conc__add"></div>
+        <p class="product-conc__price">15$</p>
+      </div>
+    </template>
+
     <div class="wrapper">
-      <!-- <section class="entry-page">
+      <section class="entry-page">
         <div class="entry-page__main-part">
           <div class="entry-page__title">Eat, Sweet and Drink Restaurant</div>
           <div class="entry-page__image-box">
@@ -30,7 +68,7 @@
         <footer class="entry-page__footer">
           <p class="entry-page__text">Tap to continue</p>
         </footer>
-      </section> -->
+      </section>
       <main class="main-page">
         <header class="main-title-box">
           <h1 class="main-title-box__text">Eat, Sweet And Drink Restaurant</h1>
@@ -39,183 +77,8 @@
           <div class="products-and-image">
             <div class="products">
               <!-- start -->
-              <div class="product">
-                <div class="product__remove-btn">
-                  <img
-                    src="./assets/images/buttons/discount.png"
-                    alt="remove button image"
-                    class="product__remove-btn__image"
-                  />
-                </div>
-                <div class="product__add-btn">
-                  <img
-                    src="./assets/images/buttons/plus.png"
-                    alt="add button image"
-                    class="product__add-btn__image"
-                  />
-                </div>
-                <div class="product__amount">0x</div>
-                <div class="product__value">1.5$</div>
-                <div class="product__image-box">
-                  <img
-                    src="./assets/images/color/fries.PNG"
-                    alt=""
-                    class="product__image"
-                  />
-                </div>
-              </div>
-              <div class="product">
-                <div class="product__remove-btn">
-                  <img
-                    src="./assets/images/buttons/discount.png"
-                    alt="remove button image"
-                    class="product__remove-btn__image"
-                  />
-                </div>
-                <div class="product__add-btn">
-                  <img
-                    src="./assets/images/buttons/plus.png"
-                    alt="add button image"
-                    class="product__add-btn__image"
-                  />
-                </div>
-                <div class="product__amount">0x</div>
-                <div class="product__value">1.5$</div>
-                <div class="product__image-box">
-                  <img
-                    src="./assets/images/color/fries.PNG"
-                    alt=""
-                    class="product__image"
-                  />
-                </div>
-              </div>
-              <div class="product">
-                <div class="product__remove-btn">
-                  <img
-                    src="./assets/images/buttons/discount.png"
-                    alt="remove button image"
-                    class="product__remove-btn__image"
-                  />
-                </div>
-                <div class="product__add-btn">
-                  <img
-                    src="./assets/images/buttons/plus.png"
-                    alt="add button image"
-                    class="product__add-btn__image"
-                  />
-                </div>
-                <div class="product__amount">0x</div>
-                <div class="product__value">1.5$</div>
-                <div class="product__image-box">
-                  <img
-                    src="./assets/images/color/fries.PNG"
-                    alt=""
-                    class="product__image"
-                  />
-                </div>
-              </div>
-              <div class="product">
-                <div class="product__remove-btn">
-                  <img
-                    src="./assets/images/buttons/discount.png"
-                    alt="remove button image"
-                    class="product__remove-btn__image"
-                  />
-                </div>
-                <div class="product__add-btn">
-                  <img
-                    src="./assets/images/buttons/plus.png"
-                    alt="add button image"
-                    class="product__add-btn__image"
-                  />
-                </div>
-                <div class="product__amount">0x</div>
-                <div class="product__value">1.5$</div>
-                <div class="product__image-box">
-                  <img
-                    src="./assets/images/color/fries.PNG"
-                    alt=""
-                    class="product__image"
-                  />
-                </div>
-              </div>
-              <div class="product">
-                <div class="product__remove-btn">
-                  <img
-                    src="./assets/images/buttons/discount.png"
-                    alt="remove button image"
-                    class="product__remove-btn__image"
-                  />
-                </div>
-                <div class="product__add-btn">
-                  <img
-                    src="./assets/images/buttons/plus.png"
-                    alt="add button image"
-                    class="product__add-btn__image"
-                  />
-                </div>
-                <div class="product__amount">0x</div>
-                <div class="product__value">1.5$</div>
-                <div class="product__image-box">
-                  <img
-                    src="./assets/images/color/fries.PNG"
-                    alt=""
-                    class="product__image"
-                  />
-                </div>
-              </div>
-              <div class="product">
-                <div class="product__remove-btn">
-                  <img
-                    src="./assets/images/buttons/discount.png"
-                    alt="remove button image"
-                    class="product__remove-btn__image"
-                  />
-                </div>
-                <div class="product__add-btn">
-                  <img
-                    src="./assets/images/buttons/plus.png"
-                    alt="add button image"
-                    class="product__add-btn__image"
-                  />
-                </div>
-                <div class="product__amount">0x</div>
-                <div class="product__value">1.5$</div>
-                <div class="product__image-box">
-                  <img
-                    src="./assets/images/color/fries.PNG"
-                    alt=""
-                    class="product__image"
-                  />
-                </div>
-              </div>
-              <div class="product">
-                <div class="product__remove-btn">
-                  <img
-                    src="./assets/images/buttons/discount.png"
-                    alt="remove button image"
-                    class="product__remove-btn__image"
-                  />
-                </div>
-                <div class="product__add-btn">
-                  <img
-                    src="./assets/images/buttons/plus.png"
-                    alt="add button image"
-                    class="product__add-btn__image"
-                  />
-                </div>
-                <div class="product__amount">0x</div>
-                <div class="product__value">1.5$</div>
-                <div class="product__image-box">
-                  <img
-                    src="./assets/images/color/fries.PNG"
-                    alt=""
-                    class="product__image"
-                  />
-                </div>
-              </div>
-              <div class="blank"></div>
 
+              <div class="blank"></div>
               <!-- end -->
             </div>
 
@@ -269,6 +132,29 @@
           </div>
         </section>
       </main>
+      <article class="backdrop"></article>
+      <article class="modal">
+        <div class="order-placed">
+          <div class="order-placed__waiting"></div>
+          <div class="order-placed__info">Order placed!</div>
+        </div>
+        <div class="wrapper-conc">
+          <div class="products-conc"></div>
+          <div class="discount">
+            <input
+              type="text"
+              class="discount__input"
+              placeholder="Enter discount code"
+            />
+            <button class="discount__btn" type="button">Use code</button>
+          </div>
+          <h1 class="modal__total-price">Total Price: 50$</h1>
+          <div class="modal__finish-buttons">
+            <button class="modal__back-btn" type="button">Back</button>
+            <button class="modal__order-btn" type="button">Order</button>
+          </div>
+        </div>
+      </article>
     </div>
     <script src="assets/scripts/app.js"></script>
   </body>

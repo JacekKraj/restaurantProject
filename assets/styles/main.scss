@@ -4,10 +4,17 @@
 @import "./mainPage/conclusion/_mixin.scss";
 @import "./mainPage/conclusion/_conclusion.scss";
 @import "./mainPage/prodCategories/_prodCategories.scss";
+@import "./mainPage/modal/_backdrop.scss";
+@import "./mainPage/modal/_modal.scss";
+@import "./mainPage/modal/_orderComplet.scss";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Lato", "sans-serif";
+}
+
+.main-page {
+  display: none;
 }
