@@ -15,34 +15,6 @@
     <link rel="stylesheet" href="./assets/styles/main.css" />
   </head>
   <body>
-    <template id="prod">
-      <div class="product">
-        <div class="product__remove-btn">
-          <img
-            src="./assets/images/buttons/discount.png"
-            alt="remove button image"
-            class="product__remove-btn__image"
-          />
-        </div>
-        <div class="product__add-btn">
-          <img
-            src="./assets/images/buttons/plus.png"
-            alt="add button image"
-            class="product__add-btn__image"
-          />
-        </div>
-        <div class="product__amount">0x</div>
-        <div class="product__value">1.5$</div>
-        <div class="product__image-box">
-          <img
-            src="./assets/images/color/fries.PNG"
-            alt=""
-            class="product__image"
-          />
-        </div>
-      </div>
-    </template>
-
     <template id="prod-in-conc">
       <div class="product-conc">
         <p class="product-conc__name">Fries</p>
@@ -92,7 +64,7 @@
           </div>
           <!--  -->
           <div class="order-conclusion">
-            <div class="order-conclusion__price">Total Price: 20$</div>
+            <div class="order-conclusion__price">Total Price: 0$</div>
             <button class="order-conclusion__button">
               Check order
               <span class="order-conclusion--hover-span"></span>
@@ -108,17 +80,17 @@
               class="product-categorie__hat-image"
             />
           </div>
-          <div class="products-category__container">
+          <div class="products-category__container" data-category="drinks">
             <div class="products-category products-category--drinks">
               <div class="products-category__desc">Drinks</div>
             </div>
           </div>
-          <div class="products-category__container">
+          <div class="products-category__container" data-category="sweets">
             <div class="products-category products-category--sweets">
               <div class="products-category__desc">Sweets</div>
             </div>
           </div>
-          <div class="products-category__container">
+          <div class="products-category__container" data-category="meals">
             <div class="products-category products-category--meals">
               <div class="products-category__desc">Meals</div>
             </div>
