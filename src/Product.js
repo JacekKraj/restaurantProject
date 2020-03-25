@@ -5,12 +5,13 @@ export class Product {
     this.prods = document.querySelector(".products");
     this.prodsAmount = 0;
     this.previousCategory = "";
+    this.orders = [];
   }
 
   displayProducts(type) {
     products.forEach(prod => {
       if (prod.category === type) {
-        const template = `<div class="product">
+        const template = `<div class="product" data-name="${prod.name}">
               <div class="product__remove-btn">
                 <img
                   src="./assets/images/buttons/discount.png"
@@ -26,7 +27,7 @@ export class Product {
                 />
               </div>
               <div class="product__amount">0x</div>
-              <div class="product__value">${prod.price}$</div>
+              <div class="product__value" data-value='${prod.price}'>${prod.price}$</div>
               <div class="product__image-box">
                 <img src="./../assets/images/color/${prod.name}" alt="" class="product__image" />
               </div>
@@ -54,15 +55,49 @@ export class Product {
   }
 
   addListeners() {
-    document
-      .querySelector(".product__remove-btn")
-      .addEventListener("click", this.removeProduct);
-    document
-      .querySelector(".product__add-btn")
-      .addEventListener("click", this.addProduct);
+    const removeBtn = document.querySelector(".product__remove-btn");
+    const addBtn = document.querySelector(".product__add-btn");
+    const object = this;
+    removeBtn.addEventListener(
+      "click",
+      this.getOrderData.bind(removeBtn, "-", object)
+    );
+
+    addBtn.addEventListener(
+      "click",
+      this.getOrderData.bind(addBtn, "+", object)
+    );
   }
 
-  removeProduct() {}
+  getOrderData(sign, object) {
+    const product = this.closest(".product");
+    const singleProductValue = product.querySelector(".product__value").dataset
+      .value;
+    const order = {
+      name: product.dataset.name,
+      cost: parseInt(
+        sign === "+" ? singleProductValue : `-${singleProductValue}`
+      )
+    };
+    object.createOrder.call(object, order);
+  }
 
-  addProduct() {}
+  createOrder(order) {
+    let ifAdded = false;
+    if (this.orders.length > 0) {
+      this.orders.forEach(ord => {
+        if (ord.name === order.name) {
+          ord.cost += order.cost;
+          ifAdded = true;
+        }
+      });
+      if (!ifAdded) {
+        this.orders.push(order);
+      } else {
+        ifAdded = false;
+      }
+    } else {
+      this.orders.push(order);
+    }
+  }
 }
