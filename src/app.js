@@ -11,10 +11,10 @@ class Page {
     document.querySelector(".main-page").style.display = "block";
     const prod = new Product();
     prod.displayProducts("drinks");
-    const categoryContainer = document.querySelectorAll(
+    const categoryContainers = document.querySelectorAll(
       ".products-category__container"
     );
-    categoryContainer.forEach(cat => {
+    categoryContainers.forEach(cat => {
       cat.addEventListener(
         "click",
         prod.changeCategory.bind(prod, cat.dataset.category)
