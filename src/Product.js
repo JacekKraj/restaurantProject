@@ -10,6 +10,7 @@ export class Product {
       ".order-conclusion__value"
     );
     this.totalValueContainer.innerHTML = 0;
+    this.orderClass = "";
   }
 
   displayProducts(type) {
@@ -82,35 +83,41 @@ export class Product {
     const object = this;
     removeBtn.addEventListener(
       "click",
-      this.getOrderData.bind(removeBtn, "-", object)
+      this.getOrderData.bind(removeBtn, "-", object, removeBtn, addBtn)
     );
 
     addBtn.addEventListener(
       "click",
-      this.getOrderData.bind(addBtn, "+", object)
+      this.getOrderData.bind(addBtn, "+", object, removeBtn, addBtn)
     );
   }
 
-  getOrderData(sign, object) {
+  getOrderData(sign, object, remove, add) {
     const product = this.closest(".product");
     const amount = object.getProductAmount(product, sign);
     if (!amount && amount != "0") {
       return;
     }
-    const singleProductValue = product.querySelector(".product__value").dataset
+
+    let singleProductValue = product.querySelector(".product__value").dataset
       .value;
+    if (object.orderClass.codeState) {
+      singleProductValue *= 0.8;
+      singleProductValue = singleProductValue.toFixed(1);
+    }
     const order = {
       name: product.dataset.name,
       cost: parseFloat(
         sign === "+" ? singleProductValue : `-${singleProductValue}`
       ),
       amount: sign === "+" ? 1 : -1,
-      id: product.dataset.name
+      id: product.dataset.name,
+      btnRemove: remove,
+      btnAdd: add
     };
     if (amount === 0) {
       object.deleteFromOrders.call(object, order);
       object.updateOrderTotalValue(order.cost, sign);
-      console.log(object.orders);
       return;
     }
     object.createOrder.call(object, order, sign);
@@ -155,12 +162,15 @@ export class Product {
       this.orders.push(order);
     }
     this.updateOrderTotalValue(order.cost, sign);
-    console.log(this.orders);
   }
 
   updateOrderTotalValue(cost, sign) {
     let totalValue = parseFloat(this.totalValueContainer.innerHTML);
     totalValue += cost;
-    this.totalValueContainer.innerHTML = `${totalValue}$`;
+    this.totalValueContainer.innerHTML = `${totalValue.toFixed(1)}$`;
+  }
+
+  getOrderClass(order) {
+    this.orderClass = order;
   }
 }
